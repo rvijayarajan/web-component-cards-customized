@@ -34,10 +34,6 @@ app.get('/index.js', function(req, res){
   res.sendFile(path.join(__dirname + '/index.js'));
 });
 
-app.get('/scripts/wccardssimple.js', function(req, res){
-  res.sendFile(path.join(__dirname + '/node_modules/web-component-cards-simple/dist/wccardssimple.js'));
-});
-
 app.get('/css/bootstrap-grid.css', function(req,res){
 	res.sendFile(path.join(__dirname + '/node_modules/bootstrap/dist/css/bootstrap-grid.css'))
 });
@@ -76,6 +72,10 @@ app.get('/fonts/ionicons.woff2', function(req,res){
 
 app.get('/cards-customized.html', function(req, res){
   res.sendFile(path.join(__dirname + '/cards-customized.html'));
+});
+
+app.get('/app.html', function(req, res){
+  res.sendFile(path.join(__dirname + '/app.html'));
 });
 
 app.listen(process.env.PORT || 3000);

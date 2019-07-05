@@ -1,12 +1,14 @@
 (function () {
 
- 	var app = angular.module("wcCardsCustomized",["wcCardsSimple"]);
+ 	var app = angular.module("wcCardsCustomized",[]);
 
 	app.component("wcCardsCustomized", {
 		templateUrl: "cards-customized.html",
 		bindings: {
-			config: "<cardsConfig"
+			config: "<cardsConfig",
+			onRefresh: "&"
 		},
+		transclude: true,
 		controller: "CardsCustomizedController"
 	});
 
@@ -17,6 +19,12 @@
 	function CardsCustomizedControllerFn($scope) {
 
 		var vm = $scope.$ctrl;
+		
+		vm.refresh = function() {
+			if(angular.isFunction(vm.config.refreshFn)) {
+				vm.config.refreshFn();
+			}
+		};
 	}
 
 })();

@@ -3,7 +3,7 @@
  	var app = angular.module("main",['wcCardsCustomized']);
 
 	app.component("app", {
-		template: '<wc-cards-customized style="min-height: 50vh;width: 100%" cards-config="config"></wc-cards-customized>',
+		templateUrl: 'app.html',
 		bindings: {
 			
 		},
@@ -18,6 +18,8 @@
 
 		$scope.config = {
 			headerText: 'Header Text',
+			refresh: true,
+			refreshFn: refresh,
 			// topImage: '',
 			// title: 'Card title',
 			// subTitle: 'Card subtitle',
@@ -51,6 +53,10 @@
 			footerText: 'Footer Text',
 			bottomImage: ''
 		};
+
+		function refresh() {
+			alert("Card Refreshed");
+		}
 		
 	}
 

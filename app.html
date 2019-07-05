@@ -1,0 +1,11 @@
+<wc-cards-customized style="min-height: 50vh;width: 100%" cards-config="config" on-refresh="refresh()">
+	<img src="{{config.topImage}}" class="card-img-top" alt="Top Image Unavailable. Please check source url." ng-if="config.topImage">
+  	<h5 class="card-title" ng-if="config.title">{{config.title}}</h5>
+    <h6 class="card-subtitle mb-2 text-muted" ng-if="config.subTitle">{{config.subTitle}}</h6>
+    <p class="card-text" ng-if="config.bodyText">{{config.bodyText}}</p>
+    <a href="{{link.href}}" class="card-link" ng-repeat="link in config.cardLinks track by $index" ng-if="config.cardLinks.length>0">{{link.text}}</a>
+    <img src="{{config.bottomImage}}" class="card-img-top" alt="Bottom Image Unavailable. Please check source url." ng-if="config.bottomImage">
+    <ul class="list-group list-group-flush" ng-if="config.cardDetails.length>0">
+    	<li class="list-group-item" ng-repeat="detail in config.cardDetails track by $index">{{detail.text}}</li>
+    </ul>
+</wc-cards-customized>

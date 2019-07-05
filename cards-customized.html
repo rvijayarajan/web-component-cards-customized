@@ -1,1 +1,18 @@
-<wc-cards-simple cards-config="$ctrl.config"></wc-cards-simple>
+<div class="card">
+	<div class="card-header" ng-if="$ctrl.config.headerText">
+		<div class="justify-content-between d-flex">
+			<div>
+				{{$ctrl.config.headerText}}
+			</div>
+			<div>
+				<i class="ion-md-refresh icon" style="cursor: pointer;" ng-if="$ctrl.config.refresh" ng-click="$ctrl.refresh()"></i>
+			</div>	
+		</div>
+	</div>
+  	<div class="card-body">
+	  	<ng-transclude></ng-transclude>
+  	</div>
+  	<div class="card-footer text-muted" ng-if="$ctrl.config.footerText">
+    	{{$ctrl.config.footerText}}
+  	</div>
+</div>
