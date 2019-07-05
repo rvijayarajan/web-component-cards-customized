@@ -1,6 +1,6 @@
 (function () {
 
- 	var app = angular.module("wcCardsCustomized",[]);
+ 	var app = angular.module("wcCardsCustomized",["wcCardsCustomizedTemplates"]);
 
 	app.component("wcCardsCustomized", {
 		templateUrl: "cards-customized.html",
