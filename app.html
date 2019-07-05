@@ -6,6 +6,11 @@
     <a href="{{link.href}}" class="card-link" ng-repeat="link in config.cardLinks track by $index" ng-if="config.cardLinks.length>0">{{link.text}}</a>
     <img src="{{config.bottomImage}}" class="card-img-top" alt="Bottom Image Unavailable. Please check source url." ng-if="config.bottomImage">
     <ul class="list-group list-group-flush" ng-if="config.cardDetails.length>0">
-    	<li class="list-group-item" ng-repeat="detail in config.cardDetails track by $index">{{detail.text}}</li>
+    	<li class="list-group-item" ng-repeat="detail in config.cardDetails track by $index" 
+    		ng-mouseenter="rowHover = true" ng-mouseleave="rowHover = false" ng-click="config.rowClickFn(detail)"
+    		style="cursor: pointer;">
+    		<i class="icon" ng-class="{'ion-md-mail': !rowHover, 'ion-md-mail-open': rowHover}"></i>
+    		{{detail.text}}
+    	</li>
     </ul>
 </wc-cards-customized>

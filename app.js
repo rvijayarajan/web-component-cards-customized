@@ -20,6 +20,7 @@
 			headerText: 'Header Text',
 			refresh: true,
 			refreshFn: refresh,
+			rowClickFn: rowClick,
 			// topImage: '',
 			// title: 'Card title',
 			// subTitle: 'Card subtitle',
@@ -56,6 +57,10 @@
 
 		function refresh() {
 			alert("Card Refreshed");
+		}
+
+		function rowClick(rowDetail) {
+			alert("Row Clicked "+rowDetail.text);
 		}
 		
 	}
